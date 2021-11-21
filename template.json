@@ -1,0 +1,9 @@
+{
+    "version": "0.0.1",
+    "templates":[
+        {
+			"name": "Cake.Tool",
+			"description": "Provides a staring point for Cake.Tool when using GitHub Actions"
+		}
+    ]
+}
