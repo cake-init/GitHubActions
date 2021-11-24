@@ -1,9 +1,67 @@
 {
     "version": "0.0.1",
-    "templates":[
+    "templates": [
         {
-			"name": "Cake.Tool",
-			"description": "Provides a staring point for Cake.Tool when using GitHub Actions"
-		}
+            "name": "Cake.Tool",
+            "description": "Provides a starting point for building existing project on GitHub Actions",
+            "questions": [
+                {
+                    "description": "Schedule Build",
+                    "answers": [
+                        {
+                            "description": "No",
+                            "values": {
+                                "on_schedule": ""
+                            }
+                        },
+                        {
+                            "description": "Daily at midnight UTC",
+                            "values": {
+                                "on_schedule": "  schedule:\r\n    - cron:  '0 0 * * *'"
+                            }
+                        },
+                        {
+                            "description": "Daily at 5:30 and 17:30 UTC",
+                            "values": {
+                                "on_schedule": "  schedule:\r\n    - cron:  '30 5,17 * * *'"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Cake.Tool Example",
+            "description": "A full .NET Example build on GitHub Actions",
+            "questions": []
+        }
+    ],
+    "questions": [
+        {
+            "description": "Choose .NET SDK Version",
+            "answers": [
+                {
+                    "description": "6.0.100",
+                    "values": {
+                        "sdk_version": "6.0.100",
+                        "target_framework": "net6.0"
+                    }
+                },
+                {
+                    "description": "5.0.403",
+                    "values": {
+                        "sdk_version": "5.0.403",
+                        "target_framework": "net5.0"
+                    }
+                },
+                {
+                    "description": "3.1.415",
+                    "values": {
+                        "sdk_version": "3.1.415",
+                        "target_framework": "netcoreapp3.1"
+                    }
+                }
+            ]
+        }
     ]
 }
